@@ -1,11 +1,13 @@
 version: '3.4'
 
 services:
-  catalogDb:
+  catalogdb:
     image: mongo
-  basketDb:
+
+  basketdb:
     image: redis:alpine
-  discountDb:
+
+  discountdb:
     image: postgres
 
   catalog.api:
@@ -13,6 +15,7 @@ services:
     build:
       context: .
       dockerfile: Services/Catalog/Catalog.API/Dockerfile
+
   basket.api:
     image: ${DOCKER_REGISTRY-}basketapi
     build:
