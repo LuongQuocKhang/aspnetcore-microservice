@@ -8,6 +8,7 @@ namespace Ordering.Application.Features.Orders.Commands.UpdateOrder
         public UpdateOrderCommandValidator()
         {
             RuleFor(p => p.UserName)
+                .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("{UserName} is required")
                 .NotNull()
                 .MaximumLength(50).WithMessage("{UserName} must not exceed 50 characters.");
