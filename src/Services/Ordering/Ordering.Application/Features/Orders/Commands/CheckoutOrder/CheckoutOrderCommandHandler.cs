@@ -34,7 +34,7 @@ namespace Ordering.Application.Features.Orders.Commands.CheckoutOrder
 
             _logger.LogInformation($"Order {addedOrder.Id} is successfully created.");
 
-            await SendEmmalAsync(addedOrder);
+            //await SendEmmalAsync(addedOrder);
 
             return addedOrder.Id;
         }
