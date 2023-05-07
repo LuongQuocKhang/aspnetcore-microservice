@@ -1,0 +1,24 @@
+{
+    "GlobalConfiguration": {
+        "BaseUrl": "http://host.internal.docker:5010"
+    },
+    //"Catalog": "http:/host.docker.internal:8000/api/v1/",
+    //"Basket": "http:/host.docker.internal:8001/api/v1/",
+    //"Discount": "http:/host.docker.internal:8002/api/v1/",
+    //"Ordering": "http:/host.docker.internal:8004/api/v1/"
+    "Routes": [
+        // Catalog.API
+        {
+            "DownstreamPathTemplate": "/api/v1/Catalog",
+            "DownstreamSchema": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "host.docker.internal",
+                    "Port": 8000
+                }
+            ],
+            "UpstreamPathTemplate": "/Catalog",
+            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+        }
+    ]
+}

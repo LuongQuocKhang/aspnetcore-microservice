@@ -46,6 +46,20 @@ services:
       context: .
       dockerfile: Services/Ordering/Ordering.API/Dockerfile
 
+  ocelotapigateway:
+    image: ${DOCKER_REGISTRY-}ocelotapigateway
+    build:
+      context: .
+      dockerfile: ApiGateways/OcelotApiGateway/Dockerfile
+
+  shopping.agregator:
+    image: ${DOCKER_REGISTRY-}shoppingagregator
+    build:
+      context: .
+      dockerfile: ApiGateways/Shopping.Agregator/Dockerfile
+
 volumes:
   mongo_data: 
   postgress_data:
+
+
