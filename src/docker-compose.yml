@@ -64,8 +64,16 @@ services:
       context: .
       dockerfile: WebApps/AspnetRunBasics/Dockerfile
 
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana
+
+
 volumes:
   mongo_data: 
   postgress_data:
+  elasticsearch-data:
 
 
